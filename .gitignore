@@ -1,5 +1,18 @@
-.env
-!.env.example
-
+# 의존성과 빌드 결과
 node_modules/
 dist/
+
+# 개인 환경설정
+.env
+.env.*
+!.env.example
+
+# 실행 로그
+*.log
+
+# 로컬 인계 자료
+/.handoff/
+
+# 운영체제 생성 파일
+.DS_Store
+Thumbs.db

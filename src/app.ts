@@ -11,4 +11,7 @@ const PORT = Number(process.env.PORT ?? 3000);
   app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`);
   });
-})().catch(console.error);
+})().catch((err) => {
+  console.error("Failed to start server:", err);
+  process.exitCode = 1;
+});

@@ -9,13 +9,9 @@ export async function connectDB() {
 
   dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
-  try {
-    await mongoose.connect(process.env.MONGODBURI!);
-    console.log("You successfully connected to MongoDB!");
-    return mongoose;
-  } catch (err) {
-    console.dir(err);
-  }
+  await mongoose.connect(process.env.MONGODBURI!);
+  console.log("You successfully connected to MongoDB!");
+  return mongoose;
 }
 
 export async function disconnectDB() {

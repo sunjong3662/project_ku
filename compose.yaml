@@ -1,5 +1,8 @@
 services:
   app:
     build: .
+    environment:
+      MONGODBURI: ${MONGODBURI}
+      MONGODB_DB_NAME: ${MONGODB_DB_NAME:-}
     ports:
       - "3000:3000"

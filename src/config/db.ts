@@ -9,7 +9,8 @@ export async function connectDB() {
 
   dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
-  await mongoose.connect(process.env.MONGODBURI!);
+  const dbName = process.env.MONGODB_DB_NAME?.trim();
+  await mongoose.connect(process.env.MONGODBURI!, dbName ? { dbName } : {});
   console.log("You successfully connected to MongoDB!");
   return mongoose;
 }
